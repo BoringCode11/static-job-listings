@@ -1,0 +1,148 @@
+:root {
+  --dark-saturated-cyan: hsl(180, 29%, 50%);
+  --light-grayish-cyan: hsl(180, 52%, 96%);
+  --light-grayish-cyan-tablets: hsl(180, 31%, 95%);
+  --dark-grayish-cyan: hsl(180, 8%, 52%);
+  --very-dark-grayish-cyan: hsl(180, 14%, 20%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+span {
+  display: inline-block;
+}
+
+body {
+  font-family: 'League Spartan';
+  background-color: var(--light-grayish-cyan-tablets);
+}
+
+.container {
+  min-height: 100vh;
+  padding-inline: 50px;
+  padding-block: 50px;
+}
+
+.listing {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1.25em 2em;
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-block: 2em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.listing::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  left: 0;
+  border-radius: 5px 0 0 5px;
+  width: 5px;
+  background-color: var(--dark-saturated-cyan);
+}
+
+.listing .wrapper {
+  width: 60px;
+  aspect-ratio: 1;
+  margin-inline-end: 1.5em;
+}
+
+.wrapper img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.job-information div:nth-child(2) {
+  margin-block: 0.5em;
+  font-size: 0.9em;
+  color: var(--very-dark-grayish-cyan);
+}
+
+.job-information .company {
+  color: var(--dark-saturated-cyan);
+  margin-inline-end: 0.5em;
+}
+
+.job-information :is(.new, .featured) {
+  background-color: var(--dark-saturated-cyan);
+  padding: 0.4em 0.75em;
+  margin-inline-end: 0.5em;
+  color: var(--light-grayish-cyan-tablets);
+  border-radius: 0.9em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.job-information .featured {
+  background-color: var(--very-dark-grayish-cyan);
+  margin: 0;
+}
+
+.job-information div:last-child {
+  color: var(--dark-grayish-cyan);
+  font-size: 0.9rem;
+}
+
+.job-information div:last-child span:nth-child(2n + 2) {
+  margin-inline: 0.3em;
+}
+
+.tags {
+  margin-inline-start: auto;
+  display: flex;
+  gap: 1em;
+}
+
+.tags > span,
+.filters > span {
+  background-color: var(--light-grayish-cyan);
+  color: var(--dark-saturated-cyan);
+  padding: 0.5em;
+  font-size: 0.85em;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+}
+
+.tags > span:hover {
+  background-color: var(--very-dark-grayish-cyan);
+  color: var(--light-grayish-cyan);
+}
+
+.filter {
+  max-width: 720px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2em;
+  margin-inline: auto;
+}
+
+.filters > span {
+  cursor: none;
+  margin-inline-end: 0.5em;
+}
+
+.filters > .icon-wrapper {
+  display: inline-block;
+  height: 26px;
+  cursor: pointer;
+}
+
+.filter > span {
+  color: var(--dark-saturated-cyan);
+  text-decoration: underline;
+  cursor: pointer;
+}
