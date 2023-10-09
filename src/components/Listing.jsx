@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createTags } from "./createTags"
+import { createTags } from "../utils/createTags"
 
 const Listing = (props) => {
   const {

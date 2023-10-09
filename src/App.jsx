@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import Listing from './Listing'
-import { listings as data } from './data'
+import { Filters, Listing } from './components'
+import { listings as data } from './utils/data'
 import './App.css'
-import Filters from './Filters'
 
 const App = () => {
   const [listings, setListings] = useState(data)
@@ -13,7 +12,7 @@ const App = () => {
       .filter(filter => filter)
     setFilters(newFilters)
 
-    const newListings = [...listings]
+    console.log(tags);
   }
 
   const removeFilter = (filter) => {
@@ -21,18 +20,24 @@ const App = () => {
     setFilters(filtered)
   }
 
-  return <div className='container'>
-    {filters.length > 0
-      && <Filters setFilters={setFilters} filters={filters} removeFilter={removeFilter} />}
+  return (
+    <div className='container'>
+      {filters.length > 0
+        && <Filters
+          setFilters={setFilters}
+          filters={filters}
+          removeFilter={removeFilter}
+        />}
 
-    {listings.map(listing => {
-      return <Listing
-        key={listing.id}
-        {...listing}
-        handleSelect={handleSelect}
-      />
-    })}
-  </div>
+      {listings.map(listing => {
+        return <Listing
+          key={listing.id}
+          {...listing}
+          handleSelect={handleSelect}
+        />
+      })}
+    </div>
+  )
 }
 
 export default App
