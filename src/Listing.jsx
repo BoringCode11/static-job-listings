@@ -9,6 +9,7 @@ const Listing = (props) => {
   const tags = createTags(languages, tools, role, level)
 
   return <article className="listing">
+    {featured && <div className="new-listing"></div>}
     <div className="wrapper">
       <img src={logo} alt={company} />
     </div>
@@ -36,7 +37,7 @@ const Listing = (props) => {
     <div className="tags">
       {tags.map((tag, idx) => <span
         key={idx}
-        onClick={() => handleSelect(tag)}
+        onClick={() => handleSelect(tag, tags)}
       >{tag}</span>)}
     </div>
   </article>
