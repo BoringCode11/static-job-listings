@@ -21,6 +21,10 @@ body {
   background-color: var(--light-grayish-cyan-tablets);
 }
 
+.h-rule {
+  display: none;
+}
+
 .container {
   min-height: 100vh;
   padding-inline: 50px;
@@ -36,7 +40,7 @@ body {
   position: relative;
   max-width: 720px;
   margin-inline: auto;
-  margin-block: 2em;
+  margin-block: 3em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -96,7 +100,7 @@ body {
 }
 
 .tags {
-  margin-inline-start: auto;
+  /* margin-inline-start: auto; */
   display: flex;
   gap: 1em;
 }
@@ -158,14 +162,6 @@ body {
   background-color: var(--very-dark-grayish-cyan);
 }
 
-/* .filters > span {
-  margin-inline-end: 0.5em;
-}
-
-.filters > span img {
-  background-color: var();
-} */
-
 .filters > .icon-wrapper {
   display: inline-block;
   height: 26px;
@@ -176,4 +172,42 @@ body {
   color: var(--dark-saturated-cyan);
   text-decoration: underline;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .listing {
+    flex-direction: column;
+    padding: 0;
+    align-items: start;
+    max-width: 280px;
+    padding: 40px 22px 20px;
+    margin-block-end: 2em;
+  }
+
+  .listing .job-title {
+    margin-block: 0.75em;
+  }
+
+  .wrapper {
+    position: absolute;
+    top: -30px;
+    left: 22px;
+  }
+
+  .h-rule {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--light-grayish-cyan);
+    margin-block: 0.65em;
+  }
+
+  .tags {
+    flex-wrap: wrap;
+    margin-inline-start: 0;
+  }
+
+  .new-listing {
+    top: 0;
+  }
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Filters, Listing } from './components'
-import { listings as data } from './utils/data'
+import { listings as data } from './data'
 import './App.css'
 
 const App = () => {

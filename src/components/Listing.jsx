@@ -10,6 +10,7 @@ const Listing = (props) => {
 
   return <article className="listing">
     {featured && <div className="new-listing"></div>}
+
     <div className="wrapper">
       <img src={logo} alt={company} />
     </div>
@@ -34,11 +35,12 @@ const Listing = (props) => {
       </div>
     </div>
 
+    <div className="h-rule"></div>
+
     <div className="tags">
-      {tags.map((tag, idx) => <span
-        key={idx}
-        onClick={() => handleSelect(tag, tags)}
-      >{tag}</span>)}
+      {tags.map((tag, idx) => (
+        <span key={idx} onClick={() => handleSelect(tag, tags)}>{tag}</span>
+      ))}
     </div>
   </article>
 }
